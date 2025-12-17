@@ -83,10 +83,6 @@
                     Bid Now
                 </button>
 
-                <button class="btn btn-outline-secondary w-100 mb-2">
-                    Add to Watchlist
-                </button>
-
                 <a href="{{ route('products.Home') }}" class="btn btn-link w-100 text-decoration-none">
                     ← Back to Auctions
                 </a>
