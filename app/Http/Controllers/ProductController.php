@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function Home()
+    {
+        $products = Product::latest()->get();
+        return view('products.Home', compact('products'));
+    }
+
     public function index()
     {
         $products = Product::latest()->get();
@@ -19,9 +25,14 @@ class ProductController extends Controller
     }
 
     public function show(Product $product)
-    {
-        return view('products.show', compact('product'));
-    }
+{
+    $otherProducts = Product::where('id', '!=', $product->id)
+        ->latest()
+        ->take(6)
+        ->get();
+
+    return view('products.show', compact('product', 'otherProducts'));
+}
 
     public function store(Request $request)
     {

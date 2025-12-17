@@ -6,8 +6,9 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', [ProductController::class, 'Home'])->name('products.Home');
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 Route::resource('products', ProductController::class);
-Route::resource('products', ProductController::class)
-    ->only(['create', 'store', 'show']);
+Route::resource('products', ProductController::class)->only(['create', 'store', 'show']);
