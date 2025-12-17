@@ -33,14 +33,6 @@
 </head>
 
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="{{ route('products.Home') }}">Auction Store</a>
-    </div>
-</nav>
-
 <!-- Product Section -->
 <div class="container my-4 bg-white p-4 rounded shadow-sm">
     <div class="row">
